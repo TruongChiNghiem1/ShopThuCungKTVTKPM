@@ -5,14 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@RestController
+@RequestMapping("/api")
 public class APIController {
-	@RestController
-	@RequestMapping("/api")
-	public class MyController {
-	    @GetMapping("/data")
-	    public ResponseEntity<String> getData() {
-	        return ResponseEntity.ok("Hello from Spring Boot service!");
-	    }
-	}
-
+    @GetMapping("/data")
+    public ResponseEntity<String> getData() {
+        return ResponseEntity.ok("Hello from Spring Boot service!");
+    }
 }
