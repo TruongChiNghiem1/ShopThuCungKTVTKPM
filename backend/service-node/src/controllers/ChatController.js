@@ -1,13 +1,5 @@
 const dotenv = require('dotenv')
 const jwt = require('jsonwebtoken')
-const User = require('../models/user.js')
-const Chat = require('../models/chat.js')
-const Member = require('../models/member.js')
-const Message = require('../models/message.js')
-const DeleteMessage = require('../models/DeleteMessage.js')
-const DeleteChat = require('../models/deleteChat.js')
-const { Mongoose } = require('mongoose')
-const { connect, default: mongoose } = require('mongoose')
 
 const { SECRET_CODE } = process.env
 const getAllChat = async (req, res) => {
