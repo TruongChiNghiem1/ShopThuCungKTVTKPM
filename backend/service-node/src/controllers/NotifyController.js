@@ -1,6 +1,5 @@
 const dotenv = require("dotenv");
 const jwt = require("jsonwebtoken");
-const Notify = require("../models/notify");
 
 const { SECRET_CODE } = process.env;
 const getAllNotify = async (req, res) => {
