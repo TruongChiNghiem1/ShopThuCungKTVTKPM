@@ -43,18 +43,21 @@ const mailConfirm = async (req, res) => {
             })
         } else {
             let otp = Math.floor(1000 + Math.random() * 9000)
-            const token = await conn.query('SELECT email, password FROM users WHERE email = ?', [email]);
-            const token = await Token.findOneAndUpdate(
-                { email: email },
-                { otp: otp },
-                { upsert: true }
-            )
+
+            const token = await conn.query('SELECT * FROM token WHERE email = ?', [email]);
+
+            if (token.length > 0) {
+                const resultUpdate = await conn.query('UPDATE token SET otp = ? WHERE email = ?', [otp, email]);
+            } else {
+                const resultCreate = await conn.query("INSERT INTO token(`otp`, `email`) VALUES (? , ?)", [otp, email]);
+            }
+
             var mailGenerator = new Mailgen({
                 theme: 'default',
                 product: {
-                    name: 'CATTALK',
+                    name: 'PetCare',
                     link: `${req.get('host')}`,
-                    logo: 'https://cattalk.id.vn/src/assets/logo_vertical.png?t=1705984018125',
+                    logo: '',
                     logoHeight: '50px',
                 },
             })
@@ -62,10 +65,10 @@ const mailConfirm = async (req, res) => {
             var emailConfig = {
                 body: {
                     name: 'Newbie',
-                    intro: "Welcome to CATTALK! We're very excited to have you on board.",
+                    intro: "Welcome to PetCare! We're very excited to have you on board.",
                     action: {
                         instructions:
-                            'To get started with CATTALK, please input this OTP at step three:',
+                            'To get started with PetCare, please input this OTP at step three:',
                         button: {
                             color: '#22BC66', // Optional action button color
                             text: `${otp}`,
@@ -80,7 +83,7 @@ const mailConfirm = async (req, res) => {
             var mail = mailGenerator.generate(emailConfig)
 
             const mailOptions = {
-                from: 'cattalkvn@gmail.com',
+                from: 'petcarevn@gmail.com',
                 subject: 'Confirm your email address',
                 to: email,
                 html: mail,
@@ -112,23 +115,25 @@ const authEmail = async (req, res) => {
     try {
         const { email, otp } = req.body
 
-        const emailExists = await User.findOne({ email: email, otp: 1 })
-        if (emailExists) {
+        let conn;
+        conn = await pool.getConnection();
+        const emailExists = await conn.query('SELECT email, password FROM users WHERE email = ? AND otp = 1', [email]);
+        if (emailExists.length > 0) {
             return res.json({
                 status: 500,
                 message: 'Email already used',
             })
         }
-        const register = await Token.findOne({ email: email })
-        if (!register) {
+
+        const register = await conn.query('SELECT * FROM token WHERE email = ?', [email]);
+        if (register.length == 0) {
             return res.json({
                 status: 500,
                 message: 'Submit your mail to continute',
             })
         }
 
-        if (otp == register.otp) {
-            //  Creat jwt token
+        if (otp == register[0].otp) {
             const token = jwt.sign({ email: email }, SECRET_CODE, {
                 expiresIn: '1d',
             })
@@ -154,7 +159,7 @@ const authEmail = async (req, res) => {
 const signUp = async (req, res) => {
     try {
         // Validation
-        const { userName, firstName, lastName, password, token } = req.body
+        const { firstName, lastName, password, token } = req.body
         const decoded = jwt.verify(token, SECRET_CODE)
         const email = decoded.email
         const { error } = signUpValid.validate(req.body, { abortEarly: false })
@@ -165,43 +170,32 @@ const signUp = async (req, res) => {
                 message: errors,
             })
         }
-        // Check email
-        const emailExists = await User.findOne({ email: email, otp: 1 })
-        if (emailExists) {
+
+        let conn;
+        conn = await pool.getConnection();
+        const emailExists = await conn.query('SELECT email, password FROM users WHERE email = ? AND otp = 1', [email]);
+        if (emailExists.length > 0) {
             return res.json({
                 status: 500,
                 message: 'Email already used',
             })
         }
 
-        //check username
-        const userNameExists = await User.findOne({ userName })
-        if (userNameExists) {
-            return res.json({
-                status: 500,
-                message: 'Username already used',
-            })
-        }
-
         // Hash password
         const hashedPassword = await bcrypyjs.hash(password, 10)
-
-        const user = await User.create({
-            userName,
-            firstName,
-            lastName,
-            email,
-            password: hashedPassword,
-        })
+        const user = await conn.query('INSERT INTO users(first_name, last_name, email, password, role) VALUES (?,?,?,?,2)', [firstName, lastName, email, hashedPassword]);
+        if (user.length > 0) {
+            return res.json({
+                status: 500,
+                message: 'Email already used',
+            })
+        }
         console.log(user)
-        //  Get info for client
-        user.password = undefined
         return res.json({
             status: 200,
             message: 'User created successfully',
         })
     } catch (error) {
-        console.log(error)
         return res.json({
             status: 500,
             message: 'Opps, somthing went wrong!!!',
@@ -222,22 +216,15 @@ const signIn = async (req, res) => {
         }
 
         let conn;
-        try {
-            conn = await pool.getConnection();
-            const user = await conn.query('SELECT email, password FROM users WHERE email = ?', [email]);
-            if (user.length > 0) {
-                return res.json({
-                    status: 400,
-                    message: 'User not found',
-                })
-            }
-        } catch (err) {
-            console.error('Lỗi chèn dữ liệu: ' + err);
-        } finally {
-            if (conn) conn.release();
+        conn = await pool.getConnection();
+        const user = await conn.query("SELECT * FROM users WHERE email = ?", [email]);
+        if (user.length == 0) {
+            return res.json({
+                status: 400,
+                message: 'User not found',
+            })
         }
-
-        const isMatch = await bcrypyjs.compare(password, user.password)
+        const isMatch = await bcrypyjs.compare(password, user[0].password)
         if (!isMatch) {
             return res.json({
                 status: 400,
@@ -245,22 +232,26 @@ const signIn = async (req, res) => {
             })
         }
         //  Creat jwt token
-        const token = jwt.sign({ username: user.email }, SECRET_CODE, {
+        const token = jwt.sign({ email: user[0].email }, SECRET_CODE, {
             expiresIn: '1d',
         })
-        //  Return result:
-        user.password = undefined
-
+        user[0].password = null
+        let userPrint = { ...user[0]}
+        for (const key in userPrint) {
+            if (typeof userPrint[key] === 'bigint') {
+                userPrint[key] = userPrint[key].toString(); // Chuyển đổi thành String
+            }
+        }
         return res.json({
             status: 200,
             message: 'User logged in successfully',
-            user: user,
+            user: userPrint,
             accessToken: token,
         })
     } catch (error) {
         return res.json({
             status: 500,
-            message: 'Opps, somthing went wrong!!!',
+            message: 'Opps, somthing went wrong!!!' + error,
         })
     }
 }
