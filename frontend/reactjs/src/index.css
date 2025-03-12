@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.w-100{
+  width: 100% !important;
+}
+
+.w-75{
+  width: 75% !important;
+}
+
+.h-100{
+  height: 100% !important;
+}
+
+.vh-100{
+  height: 100vh !important;
+}
+
+.vh-75{
+  height: 75vh !important;
+}
+
+.vw-100{
+  width: 100vw !important;
+}
+
+.vw-75{
+  width: 75vw !important;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between{
+  display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-column-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column-around {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-start{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.column-start{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center ;
+}
+
+.p-2{
+  padding: 0.125rem !important;
+}
+
+.px-3{
+  padding: 0 1.25rem !important;
+}
+
+.m-0{
+  margin: 0 !important;
+}
+
+.mt-2{
+  margin-top: 1.5 rem !important;
+}
+
+.mt-1{
+  margin-top: 0.85rem;
+}
+
+.mr-1{
+  margin-right: 0.85rem;
+}
+
+.mt-3{
+  margin-top: 1.5rem;
+}
+
+.mb-0{
+  margin-bottom: 0 !important;
+}
+.mt-0{
+  margin-top: 0 !important;
+}
+
+.mb-1{
+  margin-bottom: 1rem !important;
+}
+
+.ml-2{
+  margin-left: 1.5rem;
+}
+
+.ml-1 {
+  margin-left: 1rem;
+}
+.text-end{
+  text-align: end;
+}
+
+.ant-btn.ant-btn-round{
+  border-radius: 100% !important;
+}
+
+.position-relative{
+  position: relative !important;
+}
+
+.object-cover{
+  object-fit: cover !important;
+}
+
+.flex-end{
+  display: flex;
+  justify-content: end;
+}
+ #layout_main{
+  max-height: 98vh;
+  overflow: hidden;
+ }
+
+ .title_feature{
+  font-size: 28px  !important;
+ }
+
+ .primary{
+  color: #44bccc !important
+ }
+
+ .container{
+  padding-top: 0 !important;
+ }
+
+ .cursor-pointer{
+  cursor: pointer;
+ }
+
+ .title_feature{
+  font-size: 22px !important;
+ }
