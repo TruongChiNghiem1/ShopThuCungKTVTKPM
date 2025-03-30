@@ -47,7 +47,7 @@ const products = [
 
 const TopProducts = () => {
   return (
-    <section className="bg-gradient-to-b from-[#E8F9FD] to-white py-16 px-6">
+    <section className="bg-gradient-to-b blue-bg-color py-16 px-6 mx-5 border-radius-20 border-none">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">
           Top-selling Products
