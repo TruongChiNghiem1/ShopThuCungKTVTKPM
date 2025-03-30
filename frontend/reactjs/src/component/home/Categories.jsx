@@ -1,5 +1,5 @@
 // import { PawPrint } from 'lucide-react';
-
+import CatCategory from '../../assets/Home/CatCategory.png';
 const categories = [
   { 
     name: 'Dogs', 
@@ -35,13 +35,16 @@ const categories = [
 
 const Categories = () => {
   return (
-    <section className="py-16 px-6 bg-white">
+    <section className="py-8 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-center gap-3 mb-12">
+        <div className="flex justify-center gap-3 mb-12">
           {/*<PawPrint className="w-8 h-8 text-yellow-400" />*/}
-          <h2 className="text-3xl font-bold text-center text-blue-900">
-            Shop by Category
-          </h2>
+          <div className="flex flex-col items-center">
+            <img src={CatCategory} className="mb-2" alt={'CatCategory'}/>
+            <h2 className="text-3xl font-bold text-center yellow-color">
+              Shop by Category
+            </h2>
+          </div>
           {/*<PawPrint className="w-8 h-8 text-yellow-400" />*/}
         </div>
         
@@ -49,9 +52,9 @@ const Categories = () => {
           {categories.map((category) => (
             <div 
               key={category.name} 
-              className="group bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all cursor-pointer border border-gray-100"
+              className="group bg-white rounded-2xl border-0 p-4 hover:shadow-xl transition-all cursor-pointer  border-gray-100"
             >
-              <div className="w-full aspect-square rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-transform">
+              <div className="w-full aspect-square overflow-hidden mb-4 group-hover:scale-105 transition-transform rounded-full">
                 <img 
                   src={category.image} 
                   alt={category.name} 
