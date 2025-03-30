@@ -23,8 +23,8 @@ const LoginForm = () => {
 
     const handleLogIn = async() => {
         setLoading(true);
+        let values = await form.validateFields();
         try {
-            let values = await form.validateFields();
             const user = await logIn(values)
             if(user.data.status == 200){
                 removeCookie('token');

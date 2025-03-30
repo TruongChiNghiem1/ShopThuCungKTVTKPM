@@ -1,3 +1,4 @@
+import catBlue from "../../assets/Home/CatBlue.png";
 
 const blogs = [
   {
@@ -24,29 +25,32 @@ const BlogSection = () => {
   return (
     <section className="bg-[#E8F9FD] py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-blue-900 mb-8">
-          Charming Pet News & Blog Updates
-        </h2>
-        
-        <div className="grid grid-cols-3 gap-8">
-          {blogs.map((blog) => (
-            <div key={blog.id} className="bg-white rounded-lg overflow-hidden shadow-md">
-              <div className="h-48 overflow-hidden">
-                <img src={blog.image} alt={blog.title} className="w-full h-full object-cover" />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-blue-900 mb-3">{blog.title}</h3>
-                <p className="text-gray-600 mb-4">{blog.excerpt}</p>
-                <button className="text-blue-900 font-medium hover:text-blue-700">
-                  Read more →
-                </button>
-              </div>
-            </div>
-          ))}
+        <div className="flex flex-col items-center">
+          <img src={catBlue} className="mb-3" alt={'CatCategory'}/>
+          <h2 className="text-3xl font-bold text-center text-blue-900 mb-8">
+            Charming Pet News & Blog Updates
+          </h2>
         </div>
-      </div>
+
+          <div className="grid grid-cols-3 gap-8">
+            {blogs.map((blog) => (
+                <div key={blog.id} className="bg-white rounded-lg overflow-hidden shadow-md">
+                  <div className="h-48 overflow-hidden">
+                    <img src={blog.image} alt={blog.title} className="w-full h-full object-cover"/>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-semibold text-blue-900 mb-3">{blog.title}</h3>
+                    <p className="text-gray-600 mb-4">{blog.excerpt}</p>
+                    <button className="text-blue-900 font-medium hover:text-blue-700">
+                      Read more →
+                    </button>
+                  </div>
+                </div>
+            ))}
+          </div>
+        </div>
     </section>
-  );
+);
 }
 
 export default BlogSection;

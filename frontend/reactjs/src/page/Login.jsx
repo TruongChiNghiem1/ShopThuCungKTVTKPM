@@ -3,7 +3,6 @@ import { Row, Col, theme, Typography } from "antd"
 import { Link } from "react-router-dom";
 import { HomeOutlined } from '@ant-design/icons';
 import LoginForm from "../component/LoginForm";
-
 import { useCookies } from "react-cookie";
 
 const Login = () => {
