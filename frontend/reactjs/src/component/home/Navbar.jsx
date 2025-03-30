@@ -1,5 +1,7 @@
 // import { Heart, ShoppingCart, User, Search } from 'lucide-react';
 import logoPetCare from '../../assets/logo.png';
+import {Link} from "react-router-dom";
+import React from "react";
 const Navbar = () => {
   return (
     <nav className="bg-white py-4 px-6 shadow-sm">
@@ -13,6 +15,7 @@ const Navbar = () => {
           <a href="#" className="text-gray-700 hover:text-blue-900">Products</a>
           <a href="#" className="text-gray-700 hover:text-blue-900">Blogs</a>
           <a href="#" className="text-gray-700 hover:text-blue-900">FAQs</a>
+
         </div>
 
         <div className="flex items-center gap-4">

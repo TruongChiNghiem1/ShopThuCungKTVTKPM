@@ -121,6 +121,8 @@ import AppProvider from './context/AppContext.jsx';
 import PrivateWrapper from './page/PrivateWrapper.jsx';
 import { useCookies } from 'react-cookie';
 import ProfileFriend from './page/ProfileFriend.jsx';
+import Categories from './page/categories.jsx';
+import Productmanager from './page/productmanager.jsx';
 
 function App() {
   const [cookies] = useCookies('user')
@@ -184,6 +186,8 @@ function App() {
             <Routes>
              <Route path="/login" element={<Login />} />
              <Route path="/signup" element={<SignUp />} />
+                <Route path="/categories" element={<Categories />} />
+                <Route path="/product" element={<Productmanager />} />
              <Route element={<PrivateWrapper theme={setCurrentTheme}/>}>
                {/*<Route path="/" element={<AppLayout theme={setCurrentTheme}/>}>*/}
                  <Route index element={<Navigate to="home" />} />
