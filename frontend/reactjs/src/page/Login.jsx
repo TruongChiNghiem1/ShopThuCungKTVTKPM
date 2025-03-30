@@ -18,6 +18,8 @@ const Login = () => {
                 <Col span={10} style={{ textAlign: 'end' }}>
                      <Typography.Paragraph>Don't have an account? <Link to={'/signup?step=1'}><b>Sign up now</b></Link></Typography.Paragraph>
                 </Col>
+                <Link to={'/categories'} className="text-gray-700 hover:text-blue-900"><b>categories</b></Link>
+                <Link to={'/productmanager'} className="text-yellow-700 hover:text-red-900"><b>product</b></Link>
             </Row>
             <div className="flex-center">
                 <LoginForm/>

@@ -114,17 +114,19 @@ import {
 } from 'react-router-dom'
 import { HappyProvider } from '@ant-design/happy-work-theme'
 import Login from './page/Login'
-import NotFound from './page/NotFound'
-import Home from './page/ChatHome.jsx'
-import { useState } from 'react'
-import SignUp from './page/SignUp'
-import Profile from './page/Profile.jsx'
-import Redirect from './page/Redirect.jsx'
-import AppProvider from './context/AppContext.jsx'
-import PrivateWrapper from './page/PrivateWrapper.jsx'
-import { useCookies } from 'react-cookie'
-import ProfileFriend from './page/ProfileFriend.jsx'
-import Product from "./page/Product.jsx";
+import NotFound from './page/NotFound';
+import Home from './page/ChatHome.jsx';
+import { useState } from 'react';
+import SignUp from './page/SignUp';
+import Profile from './page/Profile.jsx';
+import AppLayout from './page/Layout.jsx';
+import Redirect from './page/Redirect.jsx';
+import AppProvider from './context/AppContext.jsx';
+import PrivateWrapper from './page/PrivateWrapper.jsx';
+import { useCookies } from 'react-cookie';
+import ProfileFriend from './page/ProfileFriend.jsx';
+import Categories from './page/categories.jsx';
+import Productmanager from './page/productmanager.jsx';
 
 function App() {
     const [cookies] = useCookies('user')
@@ -184,38 +186,30 @@ function App() {
 
     return (
         <AppProvider>
-            <HappyProvider>
-                <ConfigProvider theme={lightTheme}>
-                    <Router>
-                        <Routes>
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/signup" element={<SignUp />} />
-                            <Route
-                                element={
-                                    <PrivateWrapper theme={setCurrentTheme} />
-                                }
-                            >
-                                {/*<Route path="/" element={<AppLayout theme={setCurrentTheme}/>}>*/}
-                                <Route index element={<Navigate to="home" />} />
-                                <Route path="home" element={<Home />} />
-                                <Route path="product" element={<Product />} />
-                                <Route
-                                    path="redirect/:id"
-                                    element={<Redirect />}
-                                />
-                                <Route path="profile" element={<Profile />} />
-                                <Route
-                                    path="user/:id"
-                                    element={<ProfileFriend />}
-                                />
-                            </Route>
-                            {/*</Route>*/}
-                            <Route path="*" element={<NotFound />} />
-                        </Routes>
-                    </Router>
-                </ConfigProvider>
-            </HappyProvider>
-        </AppProvider>
+               <HappyProvider>
+           <ConfigProvider theme={ lightTheme}>
+             <Router>
+            <Routes>
+             <Route path="/login" element={<Login />} />
+             <Route path="/signup" element={<SignUp />} />
+             <Route path="/categories" element={<Categories />} />
+             <Route path="/productmanager" element={<Productmanager />} />
+             <Route element={<PrivateWrapper theme={setCurrentTheme}/>}>
+               {/*<Route path="/" element={<AppLayout theme={setCurrentTheme}/>}>*/}
+                 <Route index element={<Navigate to="home" />} />
+                 <Route path="home" element={<Home />} />
+                 <Route path="redirect/:id" element={<Redirect/>} />
+                 <Route path="profile" element={<Profile/>} />
+                 <Route path="user/:id" element={<ProfileFriend/>} />
+               </Route>
+             {/*</Route>*/}
+             <Route path="*" element={<NotFound/>} />
+           </Routes>
+           </Router>
+            </ConfigProvider>
+         </HappyProvider>
+</AppProvider>
+
     )
 }
 export default App
