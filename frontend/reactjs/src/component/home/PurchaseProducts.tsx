@@ -1,5 +1,6 @@
 // @ts-ignore
 import star from '../../assets/star.png';
+// @ts-ignore
 import catBlue from '../../assets/Home/CatBlue.png';
 const products = [
   {

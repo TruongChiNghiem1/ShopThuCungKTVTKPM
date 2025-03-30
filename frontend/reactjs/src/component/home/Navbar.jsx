@@ -5,34 +5,54 @@ import heart from '../../assets/Home/heart.png';
 import user from '../../assets/Home/user.png';
 import { LogoutOutlined } from '@ant-design/icons';
 import { Dropdown, Space } from 'antd';
+import { useCookies } from 'react-cookie';
+import {useNavigate} from "react-router-dom";
+import {useEffect} from "react";
 
-const items = [
-  {
-    key: '1',
-    label: (<a rel="noopener noreferrer" href="#"><span className="green-color">My Account</span></a>),
-    disabled: false,
-  },
-  {
-    type: 'divider',
-  },
-  {
-    key: '2',
-    label: (<a rel="noopener noreferrer" href="#"><span className="green-color">Order history</span></a>),
-    extra: '         ',
-  },
-  {
-    key: '3',
-    label: (<a rel="noopener noreferrer" href="#"><span className="green-color">Store manager</span></a>),
-    extra: '',
-  },
-  {
-    key: '4',
-    label: (<a rel="noopener noreferrer" href="#"><span className="green-color">Logout</span></a>),
-    icon: <LogoutOutlined className="green-color"/>,
-    extra: '',
-  },
-];
 const Navbar = () => {
+
+  const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies(['token', 'user']);
+  const logOut = () => {
+    removeCookie('loginToken');
+    removeCookie('user');
+    localStorage.removeItem('user');
+    localStorage.removeItem('search');
+    navigate('/login');
+  }
+  useEffect(() => {
+    if(!cookies.loginToken) {
+      navigate('/login');
+    }
+  }, [])
+
+  const items = [
+    {
+      key: '1',
+      label: (<a rel="noopener noreferrer" href="#"><span className="green-color">My Account</span></a>),
+      disabled: false,
+    },
+    {
+      type: 'divider',
+    },
+    {
+      key: '2',
+      label: (<a rel="noopener noreferrer" href="#"><span className="green-color">Order history</span></a>),
+      extra: '         ',
+    },
+    {
+      key: '3',
+      label: (<a rel="noopener noreferrer" href="#"><span className="green-color">Store manager</span></a>),
+      extra: '',
+    },
+    {
+      key: '4',
+      label: (<span rel="noopener noreferrer" onClick={logOut}><span className="green-color">Logout</span></span>),
+      icon: <LogoutOutlined className="green-color"/>,
+      extra: '',
+    },
+  ];
+
   return (
     <nav className="pt-3 mt-3 absolute w-100">
       <div className="mx-auto flex items-center justify-between w-75">
