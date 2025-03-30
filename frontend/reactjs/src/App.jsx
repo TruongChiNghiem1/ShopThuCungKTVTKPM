@@ -104,11 +104,15 @@
 // //
 //
 
-
 import './App.scss'
-import { ConfigProvider, Skeleton } from 'antd';
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
-import { HappyProvider } from '@ant-design/happy-work-theme';
+import { ConfigProvider } from 'antd'
+import {
+    BrowserRouter as Router,
+    Route,
+    Routes,
+    Navigate,
+} from 'react-router-dom'
+import { HappyProvider } from '@ant-design/happy-work-theme'
 import Login from './page/Login'
 import NotFound from './page/NotFound';
 import Home from './page/ChatHome.jsx';
@@ -121,62 +125,62 @@ import AppProvider from './context/AppContext.jsx';
 import PrivateWrapper from './page/PrivateWrapper.jsx';
 import { useCookies } from 'react-cookie';
 import ProfileFriend from './page/ProfileFriend.jsx';
-import Categories from './page/categories.jsx';
-import Productmanager from './page/productmanager.jsx';
 
 function App() {
-  const [cookies] = useCookies('user')
-  const [currentTheme, setCurrentTheme] = useState(cookies.user ? cookies.user.nightMode : 0 )
+    const [cookies] = useCookies('user')
+    const [currentTheme, setCurrentTheme] = useState(
+        cookies.user ? cookies.user.nightMode : 0
+    )
 
-  const lightTheme = {
-     token: {
-        colorPrimary: '#44bccc',
-        colorTextHeading: '#44bccc',
-        colorBgContainer : 'white',
-        colorBgSecondary: '#D8FEFF',
-
-        baseColor: 'white',
-
-        colorLightSecondary: '#FFF5EB',
-        colorBoldSecondary: '#FFBD59',
-
-        controlItemBgActive: '#c4fcff',
-        borderRadius: '20px',
-        color: '#36a7b6',
-        colorTextBase : 'black',
-        colorPrimaryText: 'black',
-        colorIcon: '#36a7b6',
-        colorLink: 'orange',
-        colorTextSecondary: '#FFF5EB',
-
-        paragraph: {
-            color: 'red',
-            fontSize: '14px',
-        }
-      },
-      components: {
-          Button: {
+    const lightTheme = {
+        token: {
             colorPrimary: '#44bccc',
-            colorBgContainer: '#e4feff',
-            colorBorderPrimary : '#2ea0af',
-            algorithm: true, // Enable algorithm
-          },
-        }
-  }
+            colorTextHeading: '#44bccc',
+            colorBgContainer: 'white',
+            colorBgSecondary: '#D8FEFF',
 
-  const darkTheme = {
-     token: {
-        // colorPrimary: '#005f70',
-        // colorBgContainer : '#003a44',
-        // colorBgSecondary: '#001e24',
-        // baseColor: 'black',
-        // borderRadius: '30px',
-        // colorTextBase : 'white',
-        //  colorPrimaryText: 'white',
-        //  colorIcon: 'white',
-        //  colorLink: 'orange'
-      }
-  }
+            baseColor: 'white',
+
+            colorLightSecondary: '#FFF5EB',
+            colorBoldSecondary: '#FFBD59',
+
+            controlItemBgActive: '#c4fcff',
+            borderRadius: '20px',
+            color: '#36a7b6',
+            colorTextBase: 'black',
+            colorPrimaryText: 'black',
+            colorIcon: '#36a7b6',
+            colorLink: 'orange',
+            colorTextSecondary: '#FFF5EB',
+
+            paragraph: {
+                color: 'red',
+                fontSize: '14px',
+            },
+        },
+        components: {
+            Button: {
+                colorPrimary: '#44bccc',
+                colorBgContainer: '#e4feff',
+                colorBorderPrimary: '#2ea0af',
+                algorithm: true, // Enable algorithm
+            },
+        },
+    }
+
+    const darkTheme = {
+        token: {
+            // colorPrimary: '#005f70',
+            // colorBgContainer : '#003a44',
+            // colorBgSecondary: '#001e24',
+            // baseColor: 'black',
+            // borderRadius: '30px',
+            // colorTextBase : 'white',
+            //  colorPrimaryText: 'white',
+            //  colorIcon: 'white',
+            //  colorLink: 'orange'
+        },
+    }
 
     return (
         <AppProvider>
@@ -186,8 +190,6 @@ function App() {
             <Routes>
              <Route path="/login" element={<Login />} />
              <Route path="/signup" element={<SignUp />} />
-                <Route path="/categories" element={<Categories />} />
-                <Route path="/product" element={<Productmanager />} />
              <Route element={<PrivateWrapper theme={setCurrentTheme}/>}>
                {/*<Route path="/" element={<AppLayout theme={setCurrentTheme}/>}>*/}
                  <Route index element={<Navigate to="home" />} />

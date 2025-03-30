@@ -8,7 +8,7 @@ import Footer from '../component/home/Footer.jsx';
 
 function Home() {
   return (
-      <div className="min-h-screen bg-[#E8F9FD]">
+      <div className="">
         <Navbar />
         <Hero />
         <Categories />
