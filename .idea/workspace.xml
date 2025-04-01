@@ -5,33 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5290c7fe-7cfc-4f6b-b67b-6a462454a52d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductShowDetail.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/reactjs/src/page/ProductDetail.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/service-laravel/app/Http/Controllers/ProductsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/service-laravel/app/Http/Controllers/ProductsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/service-laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/service-laravel/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reactjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reactjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reactjs/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reactjs/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bignumber.js/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bignumber.js/LICENCE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bignumber.js/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bignumber.js/bignumber.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bignumber.js/bignumber.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bignumber.js/bignumber.mjs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bignumber.js/doc/API.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bignumber.js/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json-bigint/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json-bigint/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json-bigint/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json-bigint/lib/parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json-bigint/lib/stringify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/json-bigint/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/service-spring/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/backend/service-spring/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reactjs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductShowDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductShowDetail.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +71,7 @@
       <updated>1742295198808</updated>
       <workItem from="1742295200290" duration="1874000" />
       <workItem from="1742302709086" duration="4000" />
-      <workItem from="1743496807465" duration="1581000" />
+      <workItem from="1743496807465" duration="5245000" />
     </task>
     <servers />
   </component>
