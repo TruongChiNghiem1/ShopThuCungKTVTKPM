@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Thanh Toán</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <h1 class="text-2xl font-bold text-blue-900 mb-4">Quét mã QR để thanh toán</h1>
+    <img id="qr-code" class="w-64 h-64"/>
+    <p id="amount" class="text-lg text-gray-700 mt-2"></p>
+
+    <script>
+        // Lấy số tiền từ URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const amount = urlParams.get("amount") || "0";
+
+        document.getElementById("amount").innerText = `Tổng tiền: ${amount} VND`;
+
+        // Thay thế thông tin tài khoản ngân hàng của bạn
+        const bankId = "MB"; // Mã ngân hàng (VD: VCB = Vietcombank)
+        const accountNumber = "9704229200187429864"; // Số tài khoản nhận tiền
+        const description = "Thanh toan don hang"; // Nội dung giao dịch
+
+        // Tạo URL QR từ VietQR
+        const qrUrl = `https://img.vietqr.io/image/${bankId}-${accountNumber}-compact.png?amount=${amount}&addInfo=${encodeURIComponent(description)}`;
+
+        // Gán QR code vào ảnh
+        document.getElementById("qr-code").src = qrUrl;
+    </script>
+</body>
+</html>

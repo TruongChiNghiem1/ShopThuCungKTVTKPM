@@ -107,8 +107,14 @@
                 <p class="text-red-500 font-bold">Total: 351.900 VND</p>
             </div>
             <div class="flex space-x-4 mt-4">
-                <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded">Cancel</button>
-                <button class="bg-yellow-500 text-white px-4 py-2 rounded">Checkout</button>
+                <form action="" method="GET">
+                    <button class="bg-gray-300 text-gray-700 px-4 py-2 rounded">Cancel</button>
+                </form>
+                <form action="qr-payment.html" method="GET">
+                    <input type="hidden" name="amount" value="351900"/> <!-- Tổng số tiền -->
+                    <button type="submit" class="bg-yellow-500 text-white px-4 py-2 rounded">Checkout</button>
+                </form>
+                
             </div>
         </div>
     </div>
