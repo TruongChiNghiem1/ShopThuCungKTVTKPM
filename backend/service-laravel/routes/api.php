@@ -18,6 +18,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/data', function () {
-    return response()->json(['message' => 'Hello from Laravel service!']);
+Route::group([], function () {
+    Route::get('/product-list', [App\Http\Controllers\ProductsController::class, 'index'])->name('product-list');
+    Route::get('/product-detail/{id}', [App\Http\Controllers\ProductsController::class, 'index'])->name('product-list');
 });

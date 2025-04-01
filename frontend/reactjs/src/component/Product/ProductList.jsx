@@ -2,93 +2,38 @@
 import star from '../../assets/star.png';
 import shoppingCart from "../../assets/shopping-cart.png";
 import heart from "../../assets/heart.png";
-const products = [
-    {
-        id: 1,
-        name: 'SmartHeart Adult Food',
-        price: '5.25',
-        rating: 4.5,
-        image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        tag: 'Best Seller'
-    },
-    {
-        id: 2,
-        name: 'Premium Cat Food',
-        price: '4.99',
-        rating: 4.8,
-        image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        tag: 'New'
-    },
-    {
-        id: 3,
-        name: 'Bird Feed Mix',
-        price: '3.99',
-        rating: 4.2,
-        image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        tag: 'Popular'
-    },
-    {
-        id: 4,
-        name: 'Deluxe Pet Bowl',
-        price: '12.99',
-        rating: 4.7,
-        image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        tag: 'Featured'
-    },
-    {
-        id: 5,
-        name: 'Pet Grooming Kit',
-        price: '24.99',
-        rating: 4.6,
-        image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        tag: 'Sale'
-    },
-    {
-        id: 6,
-        name: 'SmartHeart Adult Food',
-        price: '5.25',
-        rating: 4.5,
-        image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        tag: 'Best Seller'
-    },
-    {
-        id: 7,
-        name: 'Premium Cat Food',
-        price: '4.99',
-        rating: 4.8,
-        image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        tag: 'New'
-    },
-    {
-        id: 8,
-        name: 'Bird Feed Mix',
-        price: '3.99',
-        rating: 4.2,
-        image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        tag: 'Popular'
-    },
-    {
-        id: 9,
-        name: 'Deluxe Pet Bowl',
-        price: '12.99',
-        rating: 4.7,
-        image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        tag: 'Featured'
-    },
-    {
-        id: 10,
-        name: 'Pet Grooming Kit',
-        price: '24.99',
-        rating: 4.6,
-        image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',
-        tag: 'Sale'
-    }
-];
+import axios from "axios";
+import {useCookies} from "react-cookie";
+import {useEffect, useState} from "react";
+const ProductList = () => {
+    const [cookies, setCookie, removeCookie] = useCookies(['loginToken', 'user']);
+    const [products, setProducts] = useState([]);
 
-const TopProducts = () => {
+    const fetchData = async () => {
+        const token = cookies.loginToken;
+        const response = await axios.get('http://localhost:8000/api/data', {
+            headers: { Authorization: `Bearer ${token}` },
+        });
+        console.log(response.data);
+    };
+
+    const fetchProducts = async () => {
+        const token = cookies.loginToken;
+        const response = await axios.get('http://localhost:8000/api/product-list', {
+            headers: { Authorization: `Bearer ${token}` },
+        });
+        console.log('sssssssssssss')
+        setProducts(response.data.products);
+    };
+
+    // fetchData();
+    useEffect(() => {
+        fetchProducts();
+    }, []);
+
     return (
-        <section className="bg-gradient-to-b from-[#E8F9FD] to-white py-16 px-6">
-            <div className="max-w-7xl mx-auto">
+        <section className="bg-gradient-to-b from-[#E8F9FD] to-white py-16 px-6 pt-10">
+            <div className="max-w-7xl mx-auto mt-10 pt-10">
                 <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">
                     Products List
                 </h2>
@@ -116,7 +61,7 @@ const TopProducts = () => {
 
                             <div className="w-full aspect-square rounded-xl overflow-hidden mb-4 group-hover:scale-105 transition-transform">
                                 <img
-                                    src={product.image}
+                                    src={product.image ?? 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60'}
                                     alt={product.name}
                                     className="w-full h-full object-cover"
                                 />
@@ -133,7 +78,7 @@ const TopProducts = () => {
                                 </div>
 
                                 <div className="flex items-center justify-between">
-                                    <p className="text-lg font-bold text-blue-900">${product.price}</p>
+                                    <p className="text-lg font-bold text-blue-900">${product.new_price}</p>
                                     <button className="bg-blue-900 text-white p-2 rounded-full hover:bg-blue-800 transition-colors">
                                         <img src={shoppingCart} alt="Pet Care Logo" className="w-5 h-5 m-1"/>
                                     </button>
@@ -147,4 +92,4 @@ const TopProducts = () => {
     );
 }
 
-export default TopProducts;
+export default ProductList;
