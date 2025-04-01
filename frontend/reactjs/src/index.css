@@ -221,3 +221,7 @@ body {
  .border-radius-20 {
      border-radius: 20px;
  }
+
+ .pt-65 {
+     padding-top: 6.5rem
+ }

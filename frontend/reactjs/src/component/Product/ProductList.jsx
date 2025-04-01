@@ -5,7 +5,9 @@ import heart from "../../assets/heart.png";
 import axios from "axios";
 import {useCookies} from "react-cookie";
 import {useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 const ProductList = () => {
+    const navigate = useNavigate();
     const [cookies, setCookie, removeCookie] = useCookies(['loginToken', 'user']);
     const [products, setProducts] = useState([]);
 
@@ -22,7 +24,6 @@ const ProductList = () => {
         const response = await axios.get('http://localhost:8000/api/product-list', {
             headers: { Authorization: `Bearer ${token}` },
         });
-        console.log('sssssssssssss')
         setProducts(response.data.products);
     };
 
@@ -42,7 +43,10 @@ const ProductList = () => {
                     {products.map((product) => (
                         <div
                             key={product.id}
-                            className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all relative group"
+                            className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl transition-all relative group cursor-pointer"
+                            onClick={() => {
+                                navigate('/product-detail/' + product.id_product)
+                            }}
                         >
                             <div className="absolute top-4 right-4 z-10">
                                 <button className="bg-white p-2 rounded-full shadow-md hover:shadow-lg transition-all">
@@ -53,9 +57,9 @@ const ProductList = () => {
 
                             {product.tag && (
                                 <div className="absolute top-4 left-4 z-10">
-                  <span className="bg-yellow-400 text-blue-900 text-sm font-semibold px-3 py-1 rounded-full">
-                    {product.tag}
-                  </span>
+                                  <span className="bg-yellow-400 text-blue-900 text-sm font-semibold px-3 py-1 rounded-full">
+                                    {product.tag}
+                                  </span>
                                 </div>
                             )}
 
