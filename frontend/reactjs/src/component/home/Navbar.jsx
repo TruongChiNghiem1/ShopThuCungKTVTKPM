@@ -12,7 +12,7 @@ import {useEffect} from "react";
 const Navbar = () => {
 
   const navigate = useNavigate();
-  const [cookies, setCookie, removeCookie] = useCookies(['token', 'user']);
+  const [cookies, setCookie, removeCookie] = useCookies(['loginToken', 'user']);
   const logOut = () => {
     removeCookie('loginToken');
     removeCookie('user');

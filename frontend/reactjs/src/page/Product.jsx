@@ -1,6 +1,8 @@
 import Navbar from "../component/home/Navbar.jsx";
 import ProductList from "../component/Product/ProductList.jsx";
 import Search from "../component/Product/Search.jsx";
+import BlogSection from "../component/home/BlogSection.jsx";
+import Footer from "../component/home/Footer.jsx";
 
 function Product() {
     return (
@@ -8,6 +10,8 @@ function Product() {
             <Navbar />
             <Search/>
             <ProductList />
+            <BlogSection />
+            <Footer />
         </div>
     )
 }
