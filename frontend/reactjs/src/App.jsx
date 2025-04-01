@@ -128,6 +128,7 @@ import ProfileFriend from './page/ProfileFriend.jsx';
 import Categories from './page/categories.jsx';
 import Productmanager from './page/productmanager.jsx';
 import Product from "./page/Product.jsx";
+import ProductDetail from "./page/ProductDetail.jsx";
 
 function App() {
     const [cookies] = useCookies('user')
@@ -189,23 +190,24 @@ function App() {
         <AppProvider>
                <HappyProvider>
            <ConfigProvider theme={ lightTheme}>
-             <Router>
-            <Routes>
-             <Route path="/login" element={<Login />} />
-             <Route path="/signup" element={<SignUp />} />
-             <Route path="/categories" element={<Categories />} />
-             <Route path="/productmanager" element={<Productmanager />} />
-             <Route path="/product" element={<Product />} />
-             <Route element={<PrivateWrapper theme={setCurrentTheme}/>}>
-               {/*<Route path="/" element={<AppLayout theme={setCurrentTheme}/>}>*/}
-                 <Route index element={<Navigate to="home" />} />
-                 <Route path="home" element={<Home />} />
-                 <Route path="redirect/:id" element={<Redirect/>} />
-                 <Route path="profile" element={<Profile/>} />
-                 <Route path="user/:id" element={<ProfileFriend/>} />
-               </Route>
-             {/*</Route>*/}
-             <Route path="*" element={<NotFound/>} />
+               <Router>
+                   <Routes>
+                       <Route path="/login" element={<Login />} />
+                       <Route path="/signup" element={<SignUp />} />
+                       <Route path="/categories" element={<Categories />} />
+                       <Route path="/productmanager" element={<Productmanager />} />
+                       <Route path="/product" element={<Product />} />
+                       <Route path="/product-detail/:id" element={<ProductDetail />} />
+                       <Route element={<PrivateWrapper theme={setCurrentTheme}/>}>
+                           {/*<Route path="/" element={<AppLayout theme={setCurrentTheme}/>}>*/}
+                           <Route index element={<Navigate to="home" />} />
+                           <Route path="home" element={<Home />} />
+                           <Route path="redirect/:id" element={<Redirect/>} />
+                           <Route path="profile" element={<Profile/>} />
+                           <Route path="user/:id" element={<ProfileFriend/>} />
+                       </Route>
+                {/*</Route>*/}
+                <Route path="*" element={<NotFound/>} />
            </Routes>
            </Router>
             </ConfigProvider>
