@@ -153,3 +153,7 @@
   border-bottom-left-radius: 10px;
   width: 80px;
 }
+
+.w-18rem {
+    width: 18rem !important;
+}

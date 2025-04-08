@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5290c7fe-7cfc-4f6b-b67b-6a462454a52d" name="Changes" comment="" />
+    <list default="true" id="5290c7fe-7cfc-4f6b-b67b-6a462454a52d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/reactjs/src/Styles/ProductFilter.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductFilter.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reactjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reactjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reactjs/src/Styles/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/src/Styles/product.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/reactjs/src/page/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/src/page/Product.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,12 +28,12 @@
     &quot;assignee&quot;: &quot;TranTrungHiu&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/TruongChiNghiem1/ShopThuCungKTVTKPM.git&quot;,
-    &quot;accountId&quot;: &quot;c0383bf2-eb62-4b1f-8e00-8c57dbf20fc4&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/TruongChiNghiem1/ShopThuCungKTVTKPM.git",
+    "accountId": "b278dfa9-8db7-4ff3-8e30-da8978cd12d9"
   }
-}</component>
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -37,21 +46,22 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/feature-home-page&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\App\\WebStorm\\WebStorm 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.59" />
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.59" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-WS-242.23339.15" />
       </set>
     </attachedChunks>
   </component>
@@ -65,6 +75,7 @@
       <updated>1742295198808</updated>
       <workItem from="1742295200290" duration="1874000" />
       <workItem from="1742302709086" duration="4000" />
+      <workItem from="1743496807465" duration="6404000" />
     </task>
     <servers />
   </component>

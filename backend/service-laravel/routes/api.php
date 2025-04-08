@@ -20,5 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group([], function () {
     Route::get('/product-list', [App\Http\Controllers\ProductsController::class, 'index'])->name('product-list');
-    Route::get('/product-detail/{id}', [App\Http\Controllers\ProductsController::class, 'index'])->name('product-list');
+    Route::get('/product-detail/{id}', [App\Http\Controllers\ProductsController::class, 'detail'])->name('product-detail');
 });

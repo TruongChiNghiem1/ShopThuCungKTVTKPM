@@ -3,19 +3,17 @@ import ProductList from "../component/Product/ProductList.jsx";
 import Search from "../component/Product/Search.jsx";
 import BlogSection from "../component/home/BlogSection.jsx";
 import Footer from "../component/home/Footer.jsx";
-import ProductFilter from "../component/Product/ProductFilter.jsx";
+import ProductShowDetail from "../component/Product/ProductShowDetail.jsx";
 
-function Product() {
+function ProductDetail() {
     return (
         <div>
             <Navbar />
-            <Search/>
-
-            <ProductList />
+            <ProductShowDetail />
             <BlogSection />
             <Footer />
         </div>
     )
 }
 
-export default Product
+export default ProductDetail
