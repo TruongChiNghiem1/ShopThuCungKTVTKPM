@@ -9,8 +9,9 @@ class ProductsController extends Controller
 {
     public function index()
     {
+//        $products = Product::with('image')->first();
+//dd($products);
         $products = Product::all();
-
         return response()->json([
             'status' => 200,
             'products' => $products

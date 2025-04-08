@@ -23,6 +23,10 @@ class Product extends Model
         'tag'
     ];
 
+    public function image() {
+        return $this->hasMany(Image::class, 'id_product', 'id_product');
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

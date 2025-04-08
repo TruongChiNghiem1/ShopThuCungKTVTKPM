@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5290c7fe-7cfc-4f6b-b67b-6a462454a52d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/reactjs/src/Styles/ProductFilter.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductFilter.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reactjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reactjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reactjs/src/Styles/product.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/src/Styles/product.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/src/component/Product/ProductList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/reactjs/src/page/Product.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/reactjs/src/page/Product.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +21,37 @@
     &quot;assignee&quot;: &quot;TranTrungHiu&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/TruongChiNghiem1/ShopThuCungKTVTKPM.git",
-    "accountId": "b278dfa9-8db7-4ff3-8e30-da8978cd12d9"
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/feature-chi-tiet-san-pham" />
+                    <option name="lastUsedInstant" value="1744110659" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/feature-home-page" />
+                    <option name="lastUsedInstant" value="1744110658" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TruongChiNghiem1/ShopThuCungKTVTKPM.git&quot;,
+    &quot;accountId&quot;: &quot;b278dfa9-8db7-4ff3-8e30-da8978cd12d9&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -42,22 +60,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/feature-home-page&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;D:\\App\\WebStorm\\WebStorm 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "feature/feature-chi-tiet-san-pham",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "ts.external.directory.path": "D:\\App\\WebStorm\\WebStorm 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -75,7 +93,9 @@
       <updated>1742295198808</updated>
       <workItem from="1742295200290" duration="1874000" />
       <workItem from="1742302709086" duration="4000" />
-      <workItem from="1743496807465" duration="6404000" />
+      <workItem from="1743496807465" duration="7867000" />
+      <workItem from="1744000295516" duration="1447000" />
+      <workItem from="1744110604539" duration="414000" />
     </task>
     <servers />
   </component>
