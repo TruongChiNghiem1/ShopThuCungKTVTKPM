@@ -1,4 +1,7 @@
 {
+<<<<<<< HEAD
+    "java.configuration.updateBuildConfiguration": "interactive"
+=======
   "C_Cpp_Runner.cCompilerPath": "C:/MinGW/bin/gcc.exe",
   "C_Cpp_Runner.cppCompilerPath": "C:/MinGW/bin/g++.exe",
   "C_Cpp_Runner.debuggerPath": "C:/MinGW/bin/gdb.exe",
@@ -58,4 +61,5 @@
   "C_Cpp_Runner.showCompilationTime": false,
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false
+>>>>>>> 20c516efe3cac515bb14beb8ee5072847121e5fc
 }
